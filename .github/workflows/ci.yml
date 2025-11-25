@@ -28,9 +28,9 @@ jobs:
           path: |
             ~/go/pkg/mod
             ~/.cache/go-build
-          key: ${{ runners.os }}-go-${{ hashFiles('**/go.sum') }}
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
           restore-keys: |
-            ${{ runners.os }}-go-
+            ${{ runner.os }}-go-
 
       # Install golangci-lint
       - name: Install golangci-lint
