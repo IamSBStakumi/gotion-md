@@ -18,7 +18,7 @@ gotion-md -o out.md
 ## Usage (Library)
 
 ```go
-client := client.New(os.Getenv("NOTION_TOKEN"))
-md, _ := client.ConvertPage(context.Background(), "your_page_id")
+client := gotion.New(os.Getenv("NOTION_TOKEN"))
+md, _ := gotion.ConvertPage(context.Background(), "your_page_id")
 fmt.Println(md)
 ```

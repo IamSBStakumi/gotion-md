@@ -1,22 +1,22 @@
-package client
+package gotion
 
 import (
 	"context"
 	"errors"
 )
 
-type Client struct{
+type Gotion struct{
 	token string
 }
 
-func New(token string) *Client{
-	return &Client{token: token}
+func New(token string) *Gotion{
+	return &Gotion{token: token}
 }
 
 // ConvertPage is the main public API.
 // TODO: implement real Notion API fetch + conversion.
-func (c *Client) ConvertPage(ctx context.Context, pageID string)(string, error){
-	if c.token == "" {
+func (g *Gotion) ConvertPage(ctx context.Context, pageID string)(string, error){
+	if g.token == "" {
 		return "", errors.New("notion token is empty")
 	}
 

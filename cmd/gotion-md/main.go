@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/IamSBStakumi/gotion-md/pkg/client"
+	"github.com/IamSBStakumi/gotion-md/pkg/gotion"
 )
 
 func main(){
@@ -26,8 +26,8 @@ func main(){
 		os.Exit(1)
 	}
 
-	c:=client.New(token)
-	md, err := c.ConvertPage(context.Background(), pageID)
+	g := gotion.New(token)
+	md, err := g.ConvertPage(context.Background(), pageID)
 	if err != nil {
 		fmt.Println("convert error:", err)
 		os.Exit(1)
